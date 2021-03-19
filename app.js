@@ -4,7 +4,7 @@ const fs = require('fs');
 const { exit } = require('process');
 const TAG = "[PRIVEW_SYSTEM] "
 const chalk = require('chalk');
-const { UV_FS_O_FILEMAP } = require('constants');
+const CONFIG = JSON.parse(fs.readFileSync('res/config.json','utf-8'));
 
 const logText = (text) =>  {
     console.log(chalk.cyan(`${TAG}${text}`));
@@ -52,4 +52,4 @@ client.on('message', async msg => {
     }
 })
 
-client.login('ODE1OTc5NjUyMzk1ODI3MjUw.YD0SRQ.Bce1Bj-kCzPibEtzypUB1M9DUH4');
+client.login(CONFIG["APP-TOKEN"]);
