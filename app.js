@@ -25,6 +25,7 @@ client.once('ready', () => {
         if (fs.existsSync('res/config.json')) {
             logText('성공적으로 로드되었습니다.');
             logText(`${client.user.tag}으로 로그인됨.`);
+            client.user.setActivity('세상에 대해 공부', { type: 'PLAYING' });
         } else {
             errorLog('Configuration 파일을 찾을수 없습니다.');
             errorLog('시스템을 종료합니다.');
