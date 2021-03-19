@@ -108,3 +108,6 @@ res
 
 #log
 log.txt
+
+#config
+res/config.json
