@@ -8,20 +8,20 @@ const CONFIG = JSON.parse(fs.readFileSync('res/config.json','utf-8'));
 
 const logText = (text) =>  {
     console.log(chalk.cyan(`${TAG}${text}`));
-    fs.appendFile('log.txt',`\n[${new Date().toLocaleString()}] ${TAG}${text}`,'utf-8',(err) => {
+    fs.appendFile('logs.log',`\n[${new Date().toLocaleString()}] ${TAG}${text}`,'utf-8',(err) => {
         if(err) throw err;
     });
 }
 const errorLog = (text) => {
     console.log(chalk.red(`${TAG}${text}`));
-    fs.appendFile('log.txt',`\n[${new Date().toLocaleString()}] ${TAG}${text}`,'utf-8',(err) => {
+    fs.appendFile('logs.log',`\n[${new Date().toLocaleString()}] ${TAG}${text}`,'utf-8',(err) => {
         if(err) throw err;
     });
 }
 
 client.once('ready', () => {
     try {
-        if(!fs.existsSync('log.txt')) fs.writeFile('log.txt','---------------------Log---------------------','utf-8',function (err){ exit() });
+        if(!fs.existsSync('logs.log')) fs.writeFile('log.txt','---------------------Log---------------------','utf-8',function (err){ exit() });
         if (fs.existsSync('res/config.json')) {
             logText('성공적으로 로드되었습니다.');
             logText(`${client.user.tag}으로 로그인됨.`);
