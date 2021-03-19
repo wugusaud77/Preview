@@ -21,7 +21,7 @@ const errorLog = (text) => {
 
 client.once('ready', () => {
     try {
-        if(!fs.existsSync('logs.log')) fs.writeFile('log.txt','---------------------Log---------------------','utf-8',function (err){ exit() });
+        if(!fs.existsSync('logs.log')) fs.writeFile('logs.log','---------------------Log---------------------','utf-8',function (err){ exit() });
         if (fs.existsSync('res/config.json')) {
             logText('성공적으로 로드되었습니다.');
             logText(`${client.user.tag}으로 로그인됨.`);
