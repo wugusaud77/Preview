@@ -107,7 +107,7 @@ dist
 res
 
 #log
-log.txt
+log.txts
 
 #config
 res/config.json
